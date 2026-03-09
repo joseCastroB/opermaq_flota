@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_opermaq_contrato_flota_timeline" model="ir.ui.view">
+        <field name="name">opermaq.contrato.flota.timeline</field>
+        <field name="model">opermaq.contrato.flota</field>
+        <field name="arch" type="xml">
+            <timeline date_start="fecha_inicio" date_stop="fecha_fin" default_group_by="equipment_id" event_open_popup="true" title="name">
+                <field name="name"/>
+                <field name="cliente_id"/>
+                <field name="equipment_id"/>
+                <templates>
+                    <t t-name="timeline-item">
+                        <div class="o_timeline_item_content">
+                            <t t-esc="record.cliente_id[1]"/>            
+                        </div>
+                    </t>
+                </templates>
+            </timeline>
+        </field>
+    </record>
+
+    <record id="view_opermaq_contrato_flota_list" model="ir.ui.view">
+        <field name="name">opermaq.contrato.flota.list</field>
+        <field name="model">opermaq.contrato.flota</field>
+        <field name="arch" type="xml">
+            <list string="Contratos">
+                <field name="name"/>
+                <field name="cliente_id"/>
+                <field name="equipment_id"/>
+
+                <field name="maquina" optional="show"/>
+                <field name="marca" optional="show"/>
+                <field name="modelo" optional="show"/>
+                <field name="serie" optional="show"/>
+                <field name="medida_ruedas" optional="show"/>
+
+                <field name="fecha_inicio"/>
+                <field name="fecha_fin"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_opermaq_contrato_flota_form" model="ir.ui.view">
+        <field name="name">opermaq.contrato.flota.form</field>
+        <field name="model">opermaq.contrato.flota</field>
+        <field name="arch" type="xml">
+            <form string="Contrato">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="cliente_id"/>
+                            <field name="equipment_id"/>
+                            <field name="maquina"/>
+                            <field name="marca"/>
+                            <field name="modelo"/>
+                            <field name="serie"/>
+                            <field name="medida_ruedas"/>
+                        </group>
+                        <group>
+                            <field name="fecha_inicio"/>
+                            <field name="fecha_fin"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_opermaq_contrato_flota_graph" model="ir.ui.view">
+        <field name="name">opermaq.contrato.flota.graph</field>
+        <field name="model">opermaq.contrato.flota</field>
+        <field name="arch" type="xml">
+            <graph string="Equipos por Cliente" type="bar">
+                <field name="cliente_id" type="row"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_opermaq_contrato_flota" model="ir.actions.act_window">
+        <field name="name">Contratos de Flota</field>
+        <field name="res_model">opermaq.contrato.flota</field>
+        <field name="view_mode">timeline,list,graph,form</field> 
+    </record>
+
+    <menuitem id="menu_opermaq_flota_root" name="Flota Equipos" web_icon="opermaq_flota,static/description/icon.png" sequence="15"/>
+    <menuitem id="menu_opermaq_flota_contratos" name="Contratos" parent="menu_opermaq_flota_root" sequence="10"/>
+    <menuitem id="menu_opermaq_flota_contratos_act" name="Ver Contratos" parent="menu_opermaq_flota_contratos" action="action_opermaq_contrato_flota" sequence="10"/>
+
+</odoo>
