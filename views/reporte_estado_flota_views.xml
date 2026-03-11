@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_opermaq_reporte_estado_flota_graph" model="ir.ui.view">
+        <field name="name">opermaq.reporte.estado.flota.graph</field>
+        <field name="model">opermaq.reporte.estado.flota</field>
+        <field name="arch" type="xml">
+            <graph string="Disponibilidad de Flota" type="pie">
+                <field name="estado"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_opermaq_reporte_estado_flota" model="ir.actions.act_window">
+        <field name="name">Disponibilidad de Equipos</field>
+        <field name="res_model">opermaq.reporte.estado.flota</field>
+        <field name="view_mode">graph</field>
+    </record>
+
+    <menuitem id="menu_opermaq_flota_reportes_estado" 
+              name="Alquilado vs Stand By" 
+              parent="menu_opermaq_flota_reportes" 
+              action="action_opermaq_reporte_estado_flota" 
+              sequence="20"/>
+</odoo>

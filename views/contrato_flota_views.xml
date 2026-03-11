@@ -82,11 +82,20 @@
     <record id="action_opermaq_contrato_flota" model="ir.actions.act_window">
         <field name="name">Contratos de Flota</field>
         <field name="res_model">opermaq.contrato.flota</field>
-        <field name="view_mode">timeline,list,graph,form</field> 
+        <field name="view_mode">timeline,list,form</field> 
+    </record>
+
+    <record id="action_opermaq_contrato_flota_reporte" model="ir.actions.act_window">
+        <field name="name">Reporte: Equipos por Cliente</field>
+        <field name="res_model">opermaq.contrato.flota</field>
+        <field name="view_mode">graph,list</field> 
     </record>
 
     <menuitem id="menu_opermaq_flota_root" name="Flota Equipos" web_icon="opermaq_flota,static/description/icon.png" sequence="15"/>
     <menuitem id="menu_opermaq_flota_contratos" name="Contratos" parent="menu_opermaq_flota_root" sequence="10"/>
     <menuitem id="menu_opermaq_flota_contratos_act" name="Ver Contratos" parent="menu_opermaq_flota_contratos" action="action_opermaq_contrato_flota" sequence="10"/>
+
+    <menuitem id="menu_opermaq_flota_reportes" name="Reportes" parent="menu_opermaq_flota_root" sequence="20"/>
+    <menuitem id="menu_opermaq_flota_reportes_grafico" name="Equipos por Cliente" parent="menu_opermaq_flota_reportes" action="action_opermaq_contrato_flota_reporte" sequence="10"/>
 
 </odoo>
