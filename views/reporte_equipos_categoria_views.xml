@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_opermaq_flota_equipos_categoria_graph" model="ir.ui.view">
+        <field name="name">opermaq.flota.equipos.categoria.graph</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="arch" type="xml">
+            <graph string="Equipos por Categoría" type="bar">
+                <field name="category_id" type="row"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_opermaq_flota_equipos_categoria_report" model="ir.actions.act_window">
+        <field name="name">Reporte: Equipos por Categoría</field>
+        <field name="res_model">maintenance.equipment</field>
+        <field name="view_mode">graph,list,form</field> 
+        <field name="domain">[('opermaq_estado_equipo_id.name', 'ilike', 'Propio')]</field>
+    </record>
+
+    <menuitem id="menu_opermaq_flota_reportes_categoria" 
+              name="Equipos por Categoría" 
+              parent="menu_opermaq_flota_reportes" 
+              action="action_opermaq_flota_equipos_categoria_report" 
+              sequence="30"/>
+</odoo>

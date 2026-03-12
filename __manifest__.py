@@ -10,6 +10,7 @@
         'security/ir.model.access.csv',
         'views/contrato_flota_views.xml',
         'views/reporte_estado_flota_views.xml',
+        'views/reporte_equipos_categoria_views.xml',
     ],
     'installable': True,
     'application': True, # ESTO ES VITAL: Le dice a Odoo que es una App principal, no un simple parche
