@@ -25,6 +25,7 @@
         <field name="arch" type="xml">
             <list string="Contratos">
                 <field name="name"/>
+                <field name="nro_oc_contrato"/>
                 <field name="cliente_id"/>
                 <field name="equipment_id"/>
 
@@ -62,6 +63,7 @@
                         <group>
                             <field name="fecha_inicio"/>
                             <field name="fecha_fin"/>
+                            <field name="nro_oc_contrato"/>
                         </group>
                     </group>
                 </sheet>

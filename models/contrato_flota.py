@@ -29,6 +29,8 @@ class OpermaqContratoFlota(models.Model):
     fecha_inicio = fields.Datetime(string='Fecha Inicio', required=True, tracking=True)
     fecha_fin = fields.Datetime(string='Fecha Fin', required=True, tracking=True)
 
+    nro_oc_contrato = fields.Char(string='Nro. OC / Contrato', tracking=True)
+
     # Autogenerador de código de contrato al darle a Guardar
     @api.model_create_multi
     def create(self, vals_list):
