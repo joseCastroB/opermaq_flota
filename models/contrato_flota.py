@@ -31,6 +31,8 @@ class OpermaqContratoFlota(models.Model):
 
     nro_oc_contrato = fields.Char(string='Nro. OC / Contrato', tracking=True)
 
+    almacen = fields.Char(string='Almacén', tracking=True)
+
     # Autogenerador de código de contrato al darle a Guardar
     @api.model_create_multi
     def create(self, vals_list):

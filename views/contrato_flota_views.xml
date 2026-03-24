@@ -28,6 +28,7 @@
                 <field name="nro_oc_contrato"/>
                 <field name="cliente_id"/>
                 <field name="equipment_id"/>
+                <field name="almacen"/>
 
                 <field name="maquina" optional="show"/>
                 <field name="marca" optional="show"/>
@@ -64,6 +65,7 @@
                             <field name="fecha_inicio"/>
                             <field name="fecha_fin"/>
                             <field name="nro_oc_contrato"/>
+                            <field name="almacen"/>
                         </group>
                     </group>
                 </sheet>
