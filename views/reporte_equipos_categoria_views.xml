@@ -5,7 +5,7 @@
         <field name="model">maintenance.equipment</field>
         <field name="arch" type="xml">
             <graph string="Equipos por Categoría" type="bar">
-                <field name="category_id" type="row"/>
+                <field name="maquina" type="row"/>
             </graph>
         </field>
     </record>
