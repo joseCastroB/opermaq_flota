@@ -66,6 +66,7 @@
                             <field name="fecha_fin"/>
                             <field name="nro_oc_contrato"/>
                             <field name="almacen"/>
+                            <field name="nota"/>
                         </group>
                     </group>
                 </sheet>
